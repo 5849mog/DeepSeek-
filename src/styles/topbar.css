@@ -1,0 +1,24 @@
+/* 顶栏：菜单按钮、标题、模式指示、新对话按钮 */
+.topbar{
+  height:66px;
+  flex:0 0 auto;
+  display:grid;
+  grid-template-columns:72px minmax(0,1fr) 72px;
+  align-items:center;
+  background:rgba(255,255,255,.88);
+  backdrop-filter:saturate(180%) blur(16px);
+  -webkit-backdrop-filter:saturate(180%) blur(16px);
+  z-index:10;
+}
+body.dark-mode .topbar { background:rgba(30,31,36,.85); }
+.menu-btn{width:42px;height:42px;justify-self:center}
+.menu-btn .lines{width:18px;height:12px;position:relative;display:block}
+.menu-btn .lines::before,.menu-btn .lines::after{content:"";position:absolute;left:0;right:0;height:2px;border-radius:2px;background:var(--text)}
+.menu-btn .lines::before{top:0}.menu-btn .lines::after{bottom:0;width:12px}
+.new-btn{width:42px;height:42px;justify-self:center;border:1.5px solid var(--text);border-radius:50%;font-size:24px;font-weight:300;line-height:1}
+.title-wrap{min-width:0;text-align:center;transform:translateY(1px)}
+.title-wrap h1{margin:0;font-size:17px;font-weight:650;letter-spacing:.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--text)}
+.mode-mini{
+  margin-top:3px;color:var(--blue);font-size:12px;display:flex;align-items:center;justify-content:center;gap:4px;min-height:16px;
+}
+.mode-mini svg{width:12px;height:12px}

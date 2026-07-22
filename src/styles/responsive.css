@@ -1,0 +1,19 @@
+/* 响应式与无障碍动效收敛 */
+@media (max-width: 1080px){
+  .composer,.attach-panel{width:min(760px,88%)}
+  .model-hint{display:none}
+}
+@media (max-width: 860px){
+  .sidebar{position:fixed;left:0;top:0;bottom:0;width:min(320px,84vw);max-width:none;box-shadow:24px 0 60px rgba(20,24,40,.14)}
+  body:not(.sidebar-collapsed) .sidebar{transform:translateX(0)}
+  .messages{padding-left:22px;padding-right:22px}
+  .composer-dock{padding-left:14px;padding-right:14px}
+  .composer,.attach-panel{width:100%}
+  .seg{min-width:0;padding:10px 16px;font-size:14px}
+  .brand h2{font-size:20px}
+  .msg.user{max-width:86%}
+  .grid-2{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+}

@@ -1,0 +1,32 @@
+/* 浮动面板：附件面板、emoji 面板 */
+.attach-panel{
+  position:absolute;left:50%;bottom:calc(100% - 4px);transform:translateX(-50%) translateY(8px);width:min(760px,74%);
+  background:var(--card);border:1px solid var(--line);border-radius:26px;box-shadow:var(--shadow);padding:14px;opacity:0;pointer-events:none;
+  transition:opacity .24s ease,transform .3s var(--ease);
+  z-index:30;
+}
+.attach-panel.show{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0)}
+.attach-head{height:34px;display:flex;align-items:center;justify-content:center;color:var(--text);font-weight:560;border-bottom:1px solid var(--line);margin:-2px 2px 12px}
+.thumbs{display:flex;gap:10px;overflow-x:auto;padding:3px 2px 13px;scrollbar-width:none}
+.thumbs::-webkit-scrollbar{display:none}
+.thumb{
+  width:86px;height:86px;flex:0 0 auto;border-radius:14px;background:linear-gradient(135deg,#eceff3,#f8f9fb);border:1px solid #e8eaee;position:relative;overflow:hidden;
+}
+body.dark-mode .thumb { background:linear-gradient(135deg,#2a2c31,#1e1f24); border-color:#2c2f36; }
+.thumb::before{content:"";position:absolute;inset:12px;border-radius:9px;background:repeating-linear-gradient(0deg,transparent 0 7px,rgba(255,255,255,.1) 7px 9px)}
+.thumb::after{content:"";position:absolute;top:8px;right:8px;width:18px;height:18px;border-radius:50%;background:#fff;border:1px solid #d8dce3}
+.attach-actions{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.attach-action{
+  border:0;background:var(--side);border-radius:17px;height:76px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;color:var(--text);cursor:pointer;
+  transition:background .18s ease,transform .16s ease;
+}
+.attach-action:hover{background:var(--side-search)}.attach-action:active{transform:scale(.98)}
+.attach-action svg{width:22px;height:22px;color:var(--text)}
+.attach-action span{font-size:13px}
+.emoji-panel{
+  position:absolute;right:max(13%,calc((100% - min(760px,74%))/2));bottom:calc(100% - 2px);width:292px;background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);
+  padding:12px;display:grid;grid-template-columns:repeat(8,1fr);gap:4px;z-index:32;animation:pop .22s var(--ease) both;
+}
+@keyframes pop{from{opacity:0;transform:translateY(8px) scale(.98)}to{opacity:1;transform:none}}
+.emoji-panel button{border:0;background:transparent;border-radius:9px;height:32px;font-size:20px;cursor:pointer}
+.emoji-panel button:hover{background:var(--side-search)}

@@ -1,0 +1,36 @@
+/* 欢迎页：品牌区、模式切换分段控件 */
+.welcome{
+  min-height:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:20px 24px 56px;
+  transform:none;
+  transition:opacity .34s ease,transform .42s var(--ease);
+}
+.welcome.hidden{opacity:0;pointer-events:none;transform:translateY(-2vh);position:absolute;inset:0}
+.brand{display:flex;align-items:center;gap:11px;color:var(--text)}
+.brand .logo{width:29px;height:29px;color:var(--blue);filter:drop-shadow(0 2px 5px rgba(77,107,254,.18))}
+.brand h2{margin:0;font-size:22px;font-weight:680;letter-spacing:.01em}
+.segmented{
+  margin-top:36px;
+  display:flex;
+  align-items:center;
+  gap:2px;
+  padding:4px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  background:var(--card);
+  box-shadow:0 1px 2px rgba(20,24,40,.035),inset 0 0 0 1px rgba(255,255,255,.65);
+}
+.seg{
+  border:0;background:transparent;border-radius:999px;padding:10px 24px;color:var(--text);font-size:15px;cursor:pointer;
+  display:flex;align-items:center;gap:7px;min-width:126px;justify-content:center;
+  transition:background .24s ease,color .24s ease,box-shadow .24s ease,transform .18s ease;
+}
+.seg svg{width:16px;height:16px}
+.seg:hover{color:var(--blue)}
+.seg.active{background:var(--blue-soft);color:var(--blue);box-shadow:0 1px 0 rgba(255,255,255,.8) inset}
+.seg:active{transform:scale(.97)}
+.mode-desc{margin:15px 0 0;color:var(--muted);font-size:13px;letter-spacing:.01em;text-align:center;min-height:18px}

@@ -1,0 +1,40 @@
+/* 全局基础样式与布局骨架 */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  overflow:hidden;
+  color:var(--text);
+  background:#fff;
+  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro Display","PingFang SC","Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+body.dark-mode { background: #1e1f24; }
+
+button,input,textarea{font:inherit}
+button{-webkit-tap-highlight-color:transparent}
+
+#root{height:100%}
+.app{height:100vh;height:100dvh;display:flex;background:transparent;overflow:hidden}
+.main{position:relative;flex:1;min-width:0;height:100%;display:flex;flex-direction:column;background:transparent}
+
+.hidden{display:none!important}
+
+.icon-btn{
+  border:0;background:transparent;color:var(--text);cursor:pointer;border-radius:12px;display:grid;place-items:center;
+  transition:background .18s ease,transform .18s ease,color .18s ease;
+}
+.icon-btn:hover{background:var(--side-search)}
+.icon-btn:active{transform:scale(.94)}
+
+.btn{
+  border:1px solid var(--line);background:transparent;color:var(--text);border-radius:12px;height:42px;padding:0 16px;cursor:pointer;font-size:14px;
+  transition:background .18s ease,transform .16s ease,border-color .18s ease,color .18s ease;
+}
+.btn:hover{background:var(--side-search)}.btn:active{transform:scale(.97)}
+.btn.primary{background:var(--blue);border-color:var(--blue);color:#fff;box-shadow:0 8px 18px rgba(77,107,254,.24)}
+.btn.primary:hover{background:var(--blue-2)}
+.btn.danger{color:#d84a4a}
+.spacer{flex:1}
